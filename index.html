@@ -16,9 +16,9 @@
       </nav>
     </header>
 
-    <div class="container" ng-controller="WeatherController">
+    <div class="container" ng-controller="WeatherController as weather">
       <div id="toggle" class="toggle">
-
+        <button type="button" ng-click="weather.toggle()">Toggle</button>
       </div>
       <div class="Cities">
         <table>
