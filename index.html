@@ -18,22 +18,20 @@
 
     <div class="container" ng-controller="WeatherController as weather">
       <div id="toggle" class="toggle">
-        <button type="button" ng-click="weather.toggle()">Toggle</button>
+        <button type="button" ng-click="toggle()">Toggle</button>
       </div>
+
       <div class="Cities">
         <table>
           <tbody>
-            <tr>
-              <td>
-
-              </td>
-              <td>
-
-              </td>
+            <tr ng-repeat="city in cities" my-directive="city">
+              <!-- <td>{{ 1 }}</td> -->
+              <!-- <td>{{ temp[0].main.temp }}</td> -->
             </tr>
           </tbody>
         </table>
       </div>
+
       <div class="results">
         <table>
           <th>
