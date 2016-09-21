@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Card Isle</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://use.fontawesome.com/a3e89361a3.js"></script>
+  </head>
+
+  <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Angular Weather App</a>
+          </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav pull-right">
+            <li class="active"><a href="about.html">About Me</a></li>
+          </ul>
+
+        </div>
+      </div>
+      </nav>
+
+    <div class="container" ng-controller="WeatherController as weather">
+
+      <div class="about col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>About Me</h1>
+      </div>
+      <!-- left -->
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="">
+          <h3>Anthony Martinez</h3>
+            <ul class="connect">
+              <li><a href="https://github.com/martab7" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a></li>
+              <li><a href="https://linkedin.com/in/anthony-martinez"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a></li>
+            </ul>
+          <p>
+            <span id="hello">Hello!</span><br><br>
+            If you have not yet guessed who that handsome guy is in the photo to the right, no need to fret! <br><br>
+            That handsome devil is Anthony Martinez, aka Me. Hi, how are you? <br><br>
+            Alright, alright. Jokes aside. I believe the prompt for this assignment was to 
+            <a href="http://objectant.co" target="_blank">My Personal Site</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div class="profile col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img id="profile-img" ng-src="AnthonyMartinez2.jpg" alt="Image" />
+      </div>
+      <!-- end -->
+
+    </div>
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/weatherApp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html>

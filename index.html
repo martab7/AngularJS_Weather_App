@@ -3,59 +3,90 @@
   <head>
     <meta charset="utf-8">
     <title>Card Isle</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
+
   <body>
-    <header>
-      <nav>
-        <div class="project_name">
-          <a href="index.html">Weather</a>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Angular Weather App</a>
+          </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="about.html">About Me</a></li>
+          </ul>
+
         </div>
-        <div class="right">
-          <a href="about.html">About Me</a>
-        </div>
+      </div>
       </nav>
-    </header>
 
     <div class="container" ng-controller="WeatherController as weather">
-      <div id="toggle" class="toggle">
-        <button type="button" ng-click="toggle()">Toggle</button>
+      <div id="toggle" class="toggle col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <button class="btn btn-primary" type="button" ng-click="toggle()">Toggle and Show Weather</button>
       </div>
 
-      <div class="Cities">
-        <table>
-          <tbody>
-            <tr ng-repeat="city in cities" my-directive="city">
-              <!-- <td>{{ 1 }}</td> -->
-              <!-- <td>{{ temp[0].main.temp }}</td> -->
-            </tr>
-          </tbody>
-        </table>
+      <div class="data">
+        <!-- left -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="Cities">
+            <table class="table table-hover">
+              <tbody>
+                <tr ng-repeat="city in cities" my-directive="city" ng-click="select(city.city)">
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="results">
+            <table id="select" class="table">
+              <thead>
+                <tr>
+                  <td id="city">
+                    {{ select.name }}
+                  </td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <td id="dates">
+                    Date
+                  </td>
+                  <td id="forecast">
+                    Forecast
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {{ weather[0].main.temp }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end -->
+
       </div>
 
-      <div class="results">
-        <table>
-          <th>
-            <tr>
-              <td id="city">
-                City
-              </td>
-            </tr>
-          </th>
-          <tbody>
-            <tr>
-              <td id="dates">
-                Dates
-              </td>
-              <td id="forecast">
-                Forecasts
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
 
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/weatherApp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </body>
 </html>

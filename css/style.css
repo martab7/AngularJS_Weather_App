@@ -1,0 +1,56 @@
+.data {
+  position: relative;
+  padding-top: 60px;
+}
+
+.toggle {
+  height: 30px;
+}
+
+#toggle {
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+.profile {
+  position: relative;
+  width: 50%;
+}
+
+.about {
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+img {
+  width: 265px;
+  height: 400px;
+  position: absolute;
+  margin-left: 10%;
+}
+
+ul {
+  list-style: none;
+}
+.connect {
+  display: flex;
+  flex-direction: row;
+}
+.connect>li {
+  margin-left: 10px;
+}
+a:before, a:hover, a:after {
+  color: black;
+}
