@@ -54,7 +54,7 @@
               <thead>
                 <tr>
                   <td id="city">
-                    {{ select.name }}
+                    {{ forecast.city.name }}
                   </td>
                 </tr>
               </thead>
@@ -69,10 +69,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    {{ weather[0].main.temp }}
-                  </td>
+                <tr ng-repeat="day in forecast" selection="day">
+
                 </tr>
               </tbody>
             </table>

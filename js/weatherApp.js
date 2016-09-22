@@ -25,17 +25,25 @@
         }
 
       $scope.select = function (city) {
-        // console.log(city)
         $http.jsonp(url, { params : {
           q : city,
           units : units,
           appid : '9eee084476f605e9dada18503be885cd',
-          callback : 'JSON_CALLBACK'
+          callback : 'JSON_CALLBACK',
         }}).success(function (data, status, headers, config) {
-          console.log(data.list[0].main.temp)
-          $scope.select = data.city
-          $scope.weather = data.list
-          // console.log($scope.weather)
+          $scope.forecast = []
+          data.list.forEach(function (day, index) {
+            if((index + 7) % 7 == 0) {
+              console.log(day)
+              var object = {
+                date: day.dt_txt,
+                min: day.main.temp_min,
+                max: day.main.temp_max,
+                sym: degree
+              }
+              $scope.forecast.push(object)
+            }
+          })
         }).error(function () {
           console.log('error')
         })
@@ -62,11 +70,19 @@
   }).directive('myDirective', function () {
     return {
       restrict: "A",
-      template: '<td>{{ myDirective.city }}</td><td>{{ myDirective.temp }} {{ myDirective.sym }}</td>',
+      template: '<td>{{ myDirective.city }}</td><td>{{ myDirective.temp }}&deg{{ myDirective.sym }}</td>',
       scope: {
         myDirective: '='
       },
       link: function(scope, element, attrs, controller) {
+      }
+    }
+  }).directive('selection', function () {
+    return {
+      restrict: "A",
+      template: "<td>{{ selection.date }}</td><td>{{ selection.min | number:0 }}&deg{{ selection.sym }} / {{ selection.max | number:0 }}&deg{{ selection.sym }}</td>",
+      scope: {
+        selection: '='
       }
     }
   })
