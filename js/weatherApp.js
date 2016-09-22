@@ -31,10 +31,10 @@
           appid : '9eee084476f605e9dada18503be885cd',
           callback : 'JSON_CALLBACK',
         }}).success(function (data, status, headers, config) {
+          $scope.selectedCity = data.city.name
           $scope.forecast = []
           data.list.forEach(function (day, index) {
             if((index + 7) % 7 == 0) {
-              console.log(day)
               var object = {
                 date: day.dt_txt,
                 min: day.main.temp_min,
@@ -58,7 +58,6 @@
           appid : '9eee084476f605e9dada18503be885cd',
           callback : 'JSON_CALLBACK'
         }}).success(function (data, status, headers, config) {
-          console.log(data)
         var object = {city: city, temp: data.list[0].main.temp, sym: degree}
         $scope.cities.push(object)
         }).error(function () {
